@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="stylesheet" href="style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IEDEIX</title>
+  </head>
+  <body>
+    <canvas id="bg"></canvas>
+    <nav id="nav" class="active">
+      <img src="images/iedeix.png" alt="" />
+      <a href="mailto:jdx@tutanota.de" class="nav-button bright-button"
+        >Send Email</a
+      >
+    </nav>
+    <main>
+      <h1>Jan Josefík</h1>
+      <div>
+        <h2>3D Graphics</h2>
+      </div>
+      <ul class="cards">
+        <li>
+          <div onclick='openModal("1")' class="card pointer">
+            <img src="images/Portfolio/helmartc.png" class="card-image" />
+            <div class="card-overlay">
+              <div class="card-header">
+                <div class="card-header-text">
+                  <h3 class="card-title">Helmet - Grain</h3>
+                  <span class="card-status">06/03/2021</span>
+                </div>
+              </div>
+              <p class="card-description">
+                Created in Blender, edited in Photoshop
+              </p>
+            </div>
+          </div>
+          <div class="modal transition" id="1" onclick="closeModal(this.id)">
+            <div class="modal-box">
+              <div class="modal-image">
+                <img class="modal-image" src="images/Portfolio/helmartc.png" />
+                <img class="modal-image" src="images/Portfolio/helmart.png" />
+              </div>
+              <div class="modal-content">
+                <h3 class="card-title">Helmet - Grain</h3>
+                <span class="card-status">06/03/2021</span>
+                <p class="modal-description">
+                  Created in Blender, edited in Photoshop
+                </p>
+                <p class="modal-description">
+                  Effects were used to make it look more interesting
+                </p>
+                <p class="modal-description">Original render on the right</p>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div onclick='openModal("2")' class="card pointer">
+            <img src="images/Portfolio/helmetEO.png" class="card-image" />
+            <div class="card-overlay">
+              <div class="card-header">
+                <div class="card-header-text">
+                  <h3 class="card-title">Helmet - Neon</h3>
+                  <span class="card-status">11/09/2020</span>
+                </div>
+              </div>
+              <p class="card-description">
+                Created in Blender using the EEVEE render engine
+              </p>
+            </div>
+          </div>
+          <div class="modal transition" id="2" onclick="closeModal(this.id)">
+            <div class="modal-box">
+              <img class="modal-image" src="images/Portfolio/helmetEO.png" />
+              <div class="modal-content">
+                <h3 class="card-title">Helmet - Neon</h3>
+                <span class="card-status">11/09/2020</span>
+                <p class="modal-description">
+                  Created in Blender using the EEVEE render engine
+                </p>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div onclick='openModal("6")' class="card pointer">
+            <video
+              class="card-image"
+              onmouseover="Play(this)"
+              onmouseout="Pause(this)"
+              width="512"
+            >
+              <source src="images/Portfolio/web/100.webm" />
+            </video>
+            <div class="card-overlay">
+              <div class="card-header">
+                <div class="card-header-text">
+                  <h3 class="card-title">Gold Coins</h3>
+                  <span class="card-status">26/05/2022</span>
+                </div>
+              </div>
+              <p class="card-description">
+                Animations of Wiener Philharmoniker 1Oz, 0.5Oz and 0.25Oz coins
+              </p>
+            </div>
+          </div>
+          <div class="modal transition" id="6" onclick="closeModal(this.id)">
+            <div class="modal-box">
+              <div class="modal-image">
+                <video
+                  class="modal-image-half"
+                  onmouseover="Play(this)"
+                  onmouseout="Pause(this)"
+                  width="512"
+                >
+                  <source src="images/Portfolio/web/100.webm" />
+                </video>
+                <video
+                  class="modal-image-half"
+                  onmouseover="Play(this)"
+                  onmouseout="Pause(this)"
+                  width="512"
+                >
+                  <source src="images/Portfolio/web/50.webm" />
+                </video>
+              </div>
+              <div class="modal-content">
+                <h3 class="card-title">Gold Coins</h3>
+                <span class="card-status">26/05/2022</span>
+                <p class="modal-description">
+                  Animations of Wiener Philharmoniker 1Oz, 0.5Oz and 0.25Oz
+                  coins
+                </p>
+                <p class="modal-description">
+                  Levels of fill with gold represent the percentage of the coin
+                  the buyer can afford
+                </p>
+                <p class="modal-description">Made for a gold trading website</p>
+                <p class="modal-description">
+                  Hovering over the coin starts the animation
+                </p>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div onclick='openModal("8")' class="card pointer">
+            <video
+              class="card-image"
+              onmouseover="Play(this)"
+              onmouseout="Pause(this)"
+              width="512"
+            >
+              <source src="images/Portfolio/sci.webm" />
+            </video>
+            <div class="card-overlay">
+              <div class="card-header">
+                <div class="card-header-text">
+                  <h3 class="card-title">Space Station Corridor</h3>
+                  <span class="card-status">24/03/2020</span>
+                </div>
+              </div>
+              <p class="card-description">An uneasy walk</p>
+            </div>
+          </div>
+          <div class="modal transition" id="8" onclick="closeModal(this.id)">
+            <div class="modal-box">
+              <video class="modal-image" loop autoplay muted>
+                <source src="images/Portfolio/sci.webm" />
+              </video>
+              <div class="modal-content">
+                <h3 class="card-title">Space Station Corridor</h3>
+                <span class="card-status">24/03/2020</span>
+                <p class="modal-description">An uneasy walk</p>
+                <p class="modal-description">Quick animation in Blender</p>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div onclick='openModal("3")' class="card pointer">
+            <img src="images/Portfolio/house.png" class="card-image" />
+            <div class="card-overlay">
+              <div class="card-header">
+                <div class="card-header-text">
+                  <h3 class="card-title">Architectural Visualization</h3>
+                  <span class="card-status">19/09/2021</span>
+                </div>
+              </div>
+              <p class="card-description">
+                Architectural visualization of a single family home - realized
+                according to the the visualization
+              </p>
+            </div>
+          </div>
+          <div class="modal transition" id="3" onclick="closeModal(this.id)">
+            <div class="modal-box">
+              <img class="modal-image" src="images/Portfolio/house.png" />
+              <div class="modal-content">
+                <h3 class="card-title">Architectural Visualization</h3>
+                <span class="card-status">19/09/2021</span>
+                <p class="modal-description">
+                  Architectural visualization of a single family home - realized
+                  according to the the visualization
+                </p>
+                <p class="modal-description">
+                  The visualization was created to help the client pick the
+                  colors of the facade and roof
+                </p>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+      <div>
+        <h2>2D Graphics</h2>
+      </div>
+      <ul class="cards">
+        <li>
+          <div onclick='openModal("4")' class="card pointer">
+            <img src="images/Portfolio/neon.png" class="card-image" />
+            <div class="card-overlay">
+              <div class="card-header">
+                <div class="card-header-text">
+                  <h3 class="card-title">ELOA Logo</h3>
+                  <span class="card-status">25/05/2022</span>
+                </div>
+              </div>
+              <p class="card-description">
+                Logo for the Esports organizer of Obchodní Akademie Uherské
+                Hradiště
+              </p>
+            </div>
+          </div>
+          <div class="modal transition" id="4" onclick="closeModal(this.id)">
+            <div class="modal-box">
+              <div class="modal-image">
+                <img class="modal-image-half" src="images/Portfolio/neon.png" />
+                <img
+                  class="modal-image-half"
+                  src="images/Portfolio/background.png"
+                />
+              </div>
+              <div class="modal-content">
+                <h3 class="card-title">ELOA Logo</h3>
+                <span class="card-status">25/05/2022</span>
+                <p class="modal-description">
+                  Logo for the Esports organizer of Obchodní Akademie Uherské
+                  Hradiště
+                </p>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div onclick='openModal("9")' class="card pointer">
+            <img class="card-image" src="images/Portfolio/JDX_NEW.png" />
+            <div class="card-overlay">
+              <div class="card-header">
+                <div class="card-header-text">
+                  <h3 class="card-title">JDX Logo + OS Loading Animation</h3>
+                  <span class="card-status">22/01/2022</span>
+                </div>
+              </div>
+              <p class="card-description">Personal Logo</p>
+            </div>
+          </div>
+          <div class="modal transition" id="9" onclick="closeModal(this.id)">
+            <div class="modal-box">
+              <video class="modal-image" loop autoplay muted>
+                <source src="images/Portfolio/intro.webm" />
+              </video>
+              <div class="modal-content">
+                <h3 class="card-title">JDX Logo + Loading Animation</h3>
+                <span class="card-status">22/01/2022</span>
+                <p class="modal-description">
+                  Personal Logo that was originally created on 27. October 2019
+                </p>
+                <p class="modal-description">
+                  Animation was created in 2022 and was used as a loading screen
+                  for BSPWM - a Linux window manager
+                </p>
+                <p class="modal-description">
+                  Recently I decided to rebrand as IEDEIX, the logo you see on
+                  the navbar is temporary and is currently only used on this
+                  website.
+                </p>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div onclick='openModal("5")' class="card pointer">
+            <img src="images/Portfolio/skull.png" class="card-image" />
+            <div class="card-overlay">
+              <div class="card-header">
+                <div class="card-header-text">
+                  <h3 class="card-title">Skull Painting</h3>
+                  <span class="card-status">in progress</span>
+                </div>
+              </div>
+              <p class="card-description">
+                An digital painting of a skull with a crown made in Krita
+              </p>
+            </div>
+          </div>
+          <div class="modal transition" id="5" onclick="closeModal(this.id)">
+            <div class="modal-box">
+              <img class="modal-image" src="images/Portfolio/skull.png" />
+              <div class="modal-content">
+                <h3 class="card-title">Skull Painting</h3>
+                <span class="card-status">in progress</span>
+                <p class="modal-description">
+                  An digital painting of a skull with a crown made in Krita
+                </p>
+                <p class="modal-description">Inspired by H. R. Giger</p>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div onclick='openModal("7")' class="card pointer">
+            <img src="images/Portfolio/9b.png" class="card-image" />
+            <div class="card-overlay">
+              <div class="card-header">
+                <div class="card-header-text">
+                  <h3 class="card-title">9th Grade Commemorative Sweatshirt</h3>
+                  <span class="card-status">28/05/2020</span>
+                </div>
+              </div>
+              <p class="card-description">
+                Single color print design with 9 Boo ghosts (9B) that glow in
+                the dark
+              </p>
+            </div>
+          </div>
+          <div class="modal transition" id="7" onclick="closeModal(this.id)">
+            <div class="modal-box">
+              <div class="modal-image">
+                <img class="modal-image-half" src="images/Portfolio/9b.png" />
+                <img class="modal-image" src="images/Portfolio/9bphoto.jpg" />
+              </div>
+              <div class="modal-content">
+                <h3 class="card-title">9th Grade Commemorative Sweatshirt</h3>
+                <span class="card-status">28/05/2020</span>
+                <p class="modal-description">
+                  Single color print design with 9 Boo ghosts (9B) that glow in
+                  the dark
+                </p>
+                <p class="modal-description">
+                  Much better than the designs offered by the supplier
+                </p>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+      <a href="mailto:jdx@tutanota.de" class="contact-button bright-button">
+        <div class="button-text">Send Email</div></a
+      >
+    </main>
+
+    <!--TODO: three.js <script type="module" src="/main.js"></script>-->
+    <script>
+      function closeModal(id) {
+        document.getElementById(id).classList.remove("active");
+        document.getElementById("nav").classList.add("active");
+      }
+      function openModal(id) {
+        document.getElementById(id).classList.add("active");
+        document.getElementById("nav").classList.remove("active");
+      }
+      function Pause(video) {
+        video.removeAttribute("loop");
+      }
+      function Play(video) {
+        if (video.paused) video.setAttribute("loop", "");
+        video.play();
+      }
+    </script>
+  </body>
+</html>

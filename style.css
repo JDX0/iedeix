@@ -1,0 +1,356 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Turret+Road:wght@500&display=swap");
+
+:root {
+  --surface-color: rgb(0, 0, 0);
+  --surface-color-light: rgb(0, 0, 0);
+  --surface-color-transparent: #0003;
+  --curve: 40;
+  --border-color: #fff4;
+}
+
+html {
+  background-color: black;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.1em;
+  color: white;
+  /*background-image: url("images/Portfolio/helmartc.png");
+    background-size: cover;*/
+  background-image: linear-gradient(75deg, #001923, #230e0e);
+}
+
+* {
+  scrollbar-width: none;
+  scrollbar-color: #000000 #333333;
+}
+
+*::-webkit-scrollbar {
+  width: 5px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #000000;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #25002e;
+}
+
+main {
+  margin-right: 20%;
+  margin-left: 20%;
+}
+
+nav {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: auto;
+  display: flex;
+  height: 100px;
+  padding: 20px;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--border-color);
+  background-color: transparent;
+  z-index: 100;
+  backdrop-filter: blur(50px);
+  transition: all 0.5s;
+  opacity: 0;
+}
+
+nav.active {
+  opacity: 1;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+nav img {
+  height: 100%;
+}
+
+nav a.nav-button {
+  justify-content: center;
+  text-align: center;
+}
+h1 {
+  font-size: 200px;
+  font-weight: 700;
+  background: -webkit-linear-gradient(rgb(255, 0, 170), rgb(255, 136, 0));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+h2 {
+  font-size: 150px;
+  font-weight: 600;
+  background: -webkit-linear-gradient(rgb(77, 133, 255), rgb(0, 255, 255));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin: 4rem 5vw;
+  padding: 0;
+  list-style-type: none;
+}
+
+.card {
+  position: relative;
+  display: block;
+  height: 100%;
+  border-radius: calc(var(--curve) * 1px);
+  overflow: hidden;
+  text-decoration: none;
+  transition-duration: 1s;
+  transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.card:hover,
+.card:focus {
+  transform: scale(1);
+}
+
+.card-image {
+  width: 25vw;
+  height: 33vw;
+  object-fit: cover;
+}
+
+.card-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  background-color: var(--surface-color-light);
+  transform: translateY(100%);
+  transition: 0.2s ease-in-out;
+}
+
+.card:hover .card-overlay {
+  transform: translateY(0);
+}
+
+.card-header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 2em;
+  padding: 2em;
+  background-color: var(--surface-color);
+  transform: translateY(-100%);
+  transition: 0.2s ease-in-out;
+}
+
+.card:hover .card-header {
+  transform: translateY(0);
+}
+
+.card-thumb {
+  flex-shrink: 0;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.card-title {
+  font-size: 2em;
+  margin: 0 0 0.3em;
+  font-weight: 700;
+  background: -webkit-linear-gradient(rgb(130, 77, 255), rgb(255, 149, 216));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.card-tagline {
+  display: block;
+  margin: 1em 0;
+  font-size: 0.8em;
+  color: #d7bdca;
+}
+
+.card-status {
+  color: #d7bdca;
+  font-family: "Turret Road", cursive;
+}
+
+.card-description {
+  padding: 0 2em 2em;
+  color: #d7bdca;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  font-size: 1.5em;
+  max-height: 98px;
+}
+
+.modal-description {
+  color: #b0deff;
+  display: block;
+  overflow: hidden;
+  font-size: 1.5em;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.modal {
+  display: block;
+  position: fixed;
+  z-index: 10;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0%;
+  background-color: rgba(0, 0, 0, 0.202);
+  overflow: hidden;
+  transition: height 0ms 0ms, opacity 500ms;
+  transform: scale(0) translateX(-100%);
+}
+.modal.active {
+  opacity: 100%;
+  transform: scale(1) translateX(0%);
+}
+
+.modal-header {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.modal-box {
+  width: auto;
+  height: 80%;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 80% 20%;
+}
+
+.box,
+.modal-box {
+  background-color: black;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 5%;
+  border-radius: 1.5em;
+  border: 1px solid var(--border-color);
+}
+
+.border-b {
+  border-bottom: 1px solid var(--border-color);
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.round {
+  border-radius: 50%;
+}
+
+.transition {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 500ms;
+}
+
+.modal-image {
+  overflow: auto;
+  max-width: 100%;
+  max-height: 84vh;
+  position: relative;
+  margin: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.modal-image-half {
+  max-width: 100%;
+  max-height: 50vh;
+  position: relative;
+  margin: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.modal-content {
+  object-fit: fill;
+  overflow: hidden;
+  background-color: black;
+  padding: 15%;
+  border-left: 1px solid var(--border-color);
+  z-index: 10;
+  filter: drop-shadow(0 0 100px rgba(161, 0, 210, 0.5));
+}
+
+.grid {
+  display: grid;
+  gap: 50px;
+}
+
+.text-gradient {
+  background-image: linear-gradient(45deg, #fff 25%, #ffaee4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
+}
+
+.button,
+.bright-button {
+  transition-property: all;
+  transition-duration: 0.2s;
+  background-color: white;
+  font-family: "Turret Road", cursive;
+  color: black;
+  padding: 1rem;
+}
+.center {
+  margin: auto;
+  width: 50%;
+  padding: 5%;
+  text-align: center;
+}
+.contact-button {
+  text-align: center;
+  box-sizing: border-box;
+  width: 80%;
+  display: inline-block;
+  padding: 22px 34px;
+  position: relative;
+  font-size: 3em;
+  font-family: "Turret Road", cursive;
+  border-radius: calc(var(--curve) * 1px);
+  margin: 10%;
+}
+
+.bright-button:hover {
+  box-shadow: 0 0 5px #ffffff, 0 0 20px #3287ff, 0 0 60px #c533ff;
+}
+
+.pointer {
+  cursor: pointer;
+}
